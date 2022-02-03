@@ -1,3 +1,4 @@
+const formData = { };
 const formEl = document.querySelector('.login-form');
 formEl.addEventListener("submit", onFormElSubmit);
 function onFormElSubmit(event) {
@@ -7,10 +8,13 @@ function onFormElSubmit(event) {
     const password = formElements.password.value;
     if ((email === "") | (password === "")) { alert("Все поля должны быть заполнены!") }
     else {
-    //console.log(email);
-    //console.log(password);
+   
         const formData = new FormData(event.currentTarget);
-         formData.forEach((value, nameF) => { console.log(nameF, value) });
+        formData.forEach((value, nameF) => {
+                        formData[nameF] = value;            
+        });
+        console.log(formData);
         formEl.reset();
     }
+   
 }
