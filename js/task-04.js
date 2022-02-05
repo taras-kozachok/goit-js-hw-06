@@ -13,4 +13,3 @@ buttonDecEl.addEventListener("click", () => {
 buttonIncEl.addEventListener("click", () => {
   changeValueSpan(1);
 });
-    
